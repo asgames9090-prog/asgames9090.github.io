@@ -8,93 +8,96 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Cinzel', serif;
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Cinzel', serif;
 }
 
-body{
-    height:100vh;
-    background: url('./bg.jpg') center center / cover no-repeat;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    color:#c8a27a;
-    text-align:center;
-    overflow:hidden;
+body {
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  color:#c8a27a;
+  overflow:hidden;
+
+  /* الخلفية */
+  background: url('./bg.jpg') center center / cover no-repeat;
+  position:relative;
 }
 
-/* Dark overlay */
-body::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.75);
-    backdrop-filter: blur(4px);
-    z-index:0;
+/* Overlay داكن */
+body::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  z-index:0;
 }
 
-/* Smoke effect */
-.smoke{
-    position:absolute;
-    width:200%;
-    height:200%;
-    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 60%),
-                radial-gradient(circle at 70% 70%, rgba(255,255,255,0.04), transparent 60%);
-    animation: smokeMove 20s linear infinite;
-    z-index:1;
+/* دخان خفيف */
+.smoke {
+  position:absolute;
+  width:200%;
+  height:200%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(255,255,255,0.04), transparent 60%);
+  animation: smokeMove 20s linear infinite;
+  z-index:1;
 }
 
-@keyframes smokeMove{
-    0%{ transform:translate(-10%,-10%) rotate(0deg); }
-    50%{ transform:translate(10%,10%) rotate(180deg); }
-    100%{ transform:translate(-10%,-10%) rotate(360deg); }
+@keyframes smokeMove {
+  0%{ transform:translate(-10%,-10%) rotate(0deg); }
+  50%{ transform:translate(10%,10%) rotate(180deg); }
+  100%{ transform:translate(-10%,-10%) rotate(360deg); }
 }
 
-.container{
-    position:relative;
-    z-index:2;
-    width:90%;
-    max-width:400px;
+.container {
+  position:relative;
+  z-index:2;
+  width:90%;
+  max-width:400px;
 }
 
-.logo{
-    font-size:60px;
-    margin-bottom:40px;
-    letter-spacing:8px;
+.logo {
+  font-size:60px;
+  margin-bottom:40px;
+  letter-spacing:8px;
 }
 
-.btn{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin:20px 0;
-    padding:18px;
-    border-radius:40px;
-    text-decoration:none;
-    color:#c8a27a;
-    font-size:20px;
-    backdrop-filter: blur(12px);
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
-    transition:0.4s;
+.btn {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:20px 0;
+  padding:18px;
+  border-radius:40px;
+  text-decoration:none;
+  color:#c8a27a;
+  font-size:20px;
+  backdrop-filter: blur(12px);
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  transition:0.4s;
 }
 
-.btn:hover{
-    background:#c8a27a;
-    color:black;
-    transform:scale(1.07);
+.btn:hover {
+  background:#c8a27a;
+  color:black;
+  transform:scale(1.07);
 }
 
-.quote{
-    position:absolute;
-    bottom:40px;
-    font-size:18px;
-    letter-spacing:3px;
-    opacity:0.8;
+.quote {
+  position:absolute;
+  bottom:40px;
+  font-size:18px;
+  letter-spacing:3px;
+  opacity:0.8;
 }
 </style>
 </head>
@@ -104,22 +107,22 @@ body::before{
 <div class="smoke"></div>
 
 <div class="container">
-    <div class="logo">TM</div>
+  <div class="logo">TM</div>
 
-    <a href="https://x.com/TMTRADing_1" class="btn" target="_blank">X</a>
+  <a href="https://x.com/TMTRADing_1" class="btn" target="_blank">X</a>
 
-    <a href="https://t.me/TMTRADing_1" class="btn" target="_blank">
-        Telegram @TMTRADing_1
-    </a>
+  <a href="https://t.me/TMTRADing_1" class="btn" target="_blank">
+      Telegram @TMTRADing_1
+  </a>
 
-    <a href="https://www.instagram.com/official_yaser_80?igsh=MWw3MDlnY3Zqd2I2aw==" 
-       class="btn" target="_blank">
-       Instagram
-    </a>
+  <a href="https://www.instagram.com/official_yaser_80?igsh=MWw3MDlnY3Zqd2I2aw==" 
+     class="btn" target="_blank">
+     Instagram
+  </a>
 </div>
 
 <div class="quote">
-    STAY RICH.
+  STAY RICH.
 </div>
 
 </body>
