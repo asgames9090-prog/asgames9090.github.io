@@ -1,129 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TM Profile</title>
+    <style>
+        /* إعدادات عامة */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #d4af37; /* لون ذهبي هادئ */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070'); /* خلفية افتراضية فخمة */
+            background-size: cover;
+            background-position: center;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+        .container {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
 
-<style>
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Cinzel', serif;
-}
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #d4af37;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
 
-body {
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  text-align:center;
-  color:#c8a27a;
-  overflow:hidden;
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 5px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
 
-  /* الخلفية */
-  background: url('./bg.jpg.png') center center / cover no-repeat;
-  position:relative;
-}
+        /* تصميم الأزرار */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-/* Overlay داكن */
-body::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter: blur(4px);
-  z-index:0;
-}
+        .link-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 15px;
+            border-radius: 50px; /* شكل بيضاوي زي الصورة */
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-/* دخان خفيف */
-.smoke {
-  position:absolute;
-  width:200%;
-  height:200%;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 60%),
-              radial-gradient(circle at 70% 70%, rgba(255,255,255,0.04), transparent 60%);
-  animation: smokeMove 20s linear infinite;
-  z-index:1;
-}
+        .link-card:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: scale(1.05);
+            border-color: #d4af37;
+        }
 
-@keyframes smokeMove {
-  0%{ transform:translate(-10%,-10%) rotate(0deg); }
-  50%{ transform:translate(10%,10%) rotate(180deg); }
-  100%{ transform:translate(-10%,-10%) rotate(360deg); }
-}
+        .footer-text {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
 
-.container {
-  position:relative;
-  z-index:2;
-  width:90%;
-  max-width:400px;
-}
-
-.logo {
-  font-size:60px;
-  margin-bottom:40px;
-  letter-spacing:8px;
-}
-
-.btn {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin:20px 0;
-  padding:18px;
-  border-radius:40px;
-  text-decoration:none;
-  color:#c8a27a;
-  font-size:20px;
-  backdrop-filter: blur(12px);
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  transition:0.4s;
-}
-
-.btn:hover {
-  background:#c8a27a;
-  color:black;
-  transform:scale(1.07);
-}
-
-.quote {
-  position:absolute;
-  bottom:40px;
-  font-size:18px;
-  letter-spacing:3px;
-  opacity:0.8;
-}
-</style>
+        /* إضافة أيقونات بسيطة */
+        .icon {
+            margin-left: 10px;
+            width: 20px;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="smoke"></div>
+    <div class="container">
+        <h1>TM</h1>
 
-<div class="container">
-  <div class="logo">TM</div>
+        <div class="links-container">
+            <a href="https://x.com/TMTRADing_1" class="link-card">X (Twitter)</a>
+            <a href="https://t.me/TMTRADing_1" class="link-card">Telegram</a>
+            <a href="https://www.instagram.com/official_yaser_80?igsh=MWw3MDlnY3Zqd2I2aw==" class="link-card">Instagram</a>
+        </div>
 
-  <a href="https://x.com/TMTRADing_1" class="btn" target="_blank">X</a>
-
-  <a href="https://t.me/TMTRADing_1" class="btn" target="_blank">
-      Telegram @TMTRADing_1
-  </a>
-
-  <a href="https://www.instagram.com/official_yaser_80?igsh=MWw3MDlnY3Zqd2I2aw==" 
-     class="btn" target="_blank">
-     Instagram
-  </a>
-</div>
-
-<div class="quote">
-  STAY RICH.
-</div>
+        <p class="footer-text">I'M RICH YOU SON OF BITCHE</p>
+    </div>
 
 </body>
 </html>
