@@ -1,76 +1,125 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Links</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<title>TM</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+
 <style>
-body {
-    margin: 0;
-    font-family: 'Cairo', sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: white;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cinzel', serif;
 }
 
-.container {
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
+body{
+    height:100vh;
+    background:url(background:url('bg.jpg')) center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:#c8a27a;
+    text-align:center;
+    overflow:hidden;
 }
 
-.profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    border: 3px solid white;
+/* Dark overlay */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.75);
+    backdrop-filter: blur(4px);
+    z-index:0;
 }
 
-h1 {
-    margin: 10px 0 5px;
+/* Smoke effect */
+.smoke{
+    position:absolute;
+    width:200%;
+    height:200%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 60%),
+                radial-gradient(circle at 70% 70%, rgba(255,255,255,0.04), transparent 60%);
+    animation: smokeMove 20s linear infinite;
+    z-index:1;
 }
 
-p {
-    opacity: 0.8;
-    margin-bottom: 25px;
+@keyframes smokeMove{
+    0%{ transform:translate(-10%,-10%) rotate(0deg); }
+    50%{ transform:translate(10%,10%) rotate(180deg); }
+    100%{ transform:translate(-10%,-10%) rotate(360deg); }
 }
 
-.link {
-    display: block;
-    text-decoration: none;
-    background: white;
-    color: #2c5364;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: 0.3s;
+.container{
+    position:relative;
+    z-index:2;
+    width:90%;
+    max-width:400px;
 }
 
-.link:hover {
-    background: #00c6ff;
-    color: white;
-    transform: scale(1.05);
+.logo{
+    font-size:60px;
+    margin-bottom:40px;
+    letter-spacing:8px;
+}
+
+.btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:20px 0;
+    padding:18px;
+    border-radius:40px;
+    text-decoration:none;
+    color:#c8a27a;
+    font-size:20px;
+    backdrop-filter: blur(12px);
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.4s;
+}
+
+.btn:hover{
+    background:#c8a27a;
+    color:black;
+    transform:scale(1.07);
+}
+
+.quote{
+    position:absolute;
+    bottom:40px;
+    font-size:18px;
+    letter-spacing:3px;
+    opacity:0.8;
 }
 </style>
 </head>
+
 <body>
 
+<div class="smoke"></div>
+
 <div class="container">
-    <img src="https://via.placeholder.com/120" alt="Profile" class="profile-img">
-    <h1>ROZ</h1>
-    <p>Accessories and more</p>
+    <div class="logo">TM</div>
 
-    <a href="#" class="link" target="_blank">Instagram</a>
-    <a href="#" class="link" target="_blank">TikTok</a>
-    <a href="#" class="link" target="_blank">YouTube</a>
-    <a href="#" class="link" target="_blank">WhatsApp</a>
+    <a href="https://x.com/TMTRADing_1" class="btn" target="_blank">X</a>
 
+    <a href="https://t.me/TMTRADing_1" class="btn" target="_blank">
+        Telegram @TMTRADing_1
+    </a>
+
+    <a href="https://www.instagram.com/official_yaser_80?igsh=MWw3MDlnY3Zqd2I2aw==" 
+       class="btn" target="_blank">
+       Instagram
+    </a>
+</div>
+
+<div class="quote">
+    STAY RICH.
 </div>
 
 </body>
