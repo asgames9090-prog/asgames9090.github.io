@@ -5,96 +5,113 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TM</title>
 
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Cinzel', serif;
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Cinzel', serif;
 }
 
-body{
-    height:100vh;
-    background:url('rich (1).jpg') center/cover no-repeat;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    color:#c8a27a;
-    text-align:center;
-    overflow:hidden;
+body {
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  color:#c8a27a;
+  overflow:hidden;
+
+  /* خلفية واضحة */
+  background: url('./bg.jpg.png') center center / cover no-repeat;
+  position:relative;
 }
 
-/* Dark overlay */
-body::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.75);
-    backdrop-filter: blur(4px);
-    z-index:0;
+/* دخان خفيف جدًا */
+.smoke {
+  position:absolute;
+  width:200%;
+  height:200%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.01), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(255,255,255,0.01), transparent 60%);
+  animation: smokeMove 30s linear infinite;
+  z-index:1;
 }
 
-/* Smoke effect */
-.smoke{
-    position:absolute;
-    width:200%;
-    height:200%;
-    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 60%),
-                radial-gradient(circle at 70% 70%, rgba(255,255,255,0.04), transparent 60%);
-    animation: smokeMove 20s linear infinite;
-    z-index:1;
+@keyframes smokeMove {
+  0%{ transform:translate(-5%,-5%) rotate(0deg); }
+  50%{ transform:translate(5%,5%) rotate(180deg); }
+  100%{ transform:translate(-5%,-5%) rotate(360deg); }
 }
 
-@keyframes smokeMove{
-    0%{ transform:translate(-10%,-10%) rotate(0deg); }
-    50%{ transform:translate(10%,10%) rotate(180deg); }
-    100%{ transform:translate(-10%,-10%) rotate(360deg); }
+.container {
+  position:relative;
+  z-index:2;
+  width:90%;
+  max-width:400px;
 }
 
-.container{
-    position:relative;
-    z-index:2;
-    width:90%;
-    max-width:400px;
+.logo {
+  font-size:80px;
+  margin-bottom:40px;
+  letter-spacing:8px;
+  color: #c8a27a;
+  text-shadow: 0 0 20px rgba(200,162,122,0.8);
 }
 
-.logo{
-    font-size:60px;
-    margin-bottom:40px;
-    letter-spacing:8px;
+/* أزرار Glass فاخرة */
+.btn {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:20px 0;
+  padding:18px 30px;
+  border-radius:40px;
+  text-decoration:none;
+  color:#c8a27a;
+  font-size:22px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
 }
 
-.btn{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin:20px 0;
-    padding:18px;
-    border-radius:40px;
-    text-decoration:none;
-    color:#c8a27a;
-    font-size:20px;
-    backdrop-filter: blur(12px);
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
-    transition:0.4s;
+.btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  color:black;
+  transform: scale(1.08);
 }
 
-.btn:hover{
-    background:#c8a27a;
-    color:black;
-    transform:scale(1.07);
+.btn i {
+  margin-right: 10px;
 }
 
-.quote{
-    position:absolute;
-    bottom:40px;
-    font-size:18px;
-    letter-spacing:3px;
-    opacity:0.8;
+.quote {
+  position:absolute;
+  bottom:40px;
+  font-size:20px;
+  letter-spacing:3px;
+  opacity:0.9;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .logo { font-size:60px; margin-bottom:30px; }
+  .btn { font-size:18px; padding:15px 20px; }
+  .quote { font-size:16px; bottom:20px; }
+}
+
+@media (max-width: 768px) {
+  .logo { font-size:70px; margin-bottom:35px; }
+  .btn { font-size:20px; padding:16px 25px; }
+  .quote { font-size:18px; bottom:30px; }
 }
 </style>
 </head>
@@ -104,26 +121,18 @@ body::before{
 <div class="smoke"></div>
 
 <div class="container">
-    <div class="logo">TM</div>
+  <div class="logo">TM</div>
 
-    <a href="https://x.com/TMTRADing_1" class="btn" target="_blank">X</a>
+  <a href="https://x.com/TMTRADing_1" class="btn" target="_blank"><i class="fab fa-x fa-lg"></i> X</a>
 
-    <a href="https://t.me/TMTRADing_1" class="btn" target="_blank">
-        Telegram @TMTRADing_1
-    </a>
+  <a href="https://t.me/TMTRADing_1" class="btn" target="_blank"><i class="fab fa-telegram fa-lg"></i> Telegram @TMTRADing_1</a>
 
-    <a href="https://www.instagram.com/official_yaser_80?igsh=MWw3MDlnY3Zqd2I2aw==" 
-       class="btn" target="_blank">
-       Instagram
-    </a>
+  <a href="https://www.instagram.com/official_yaser_80?igsh=MWw3MDlnY3Zqd2I2aw==" class="btn" target="_blank"><i class="fab fa-instagram fa-lg"></i> Instagram</a>
 </div>
 
 <div class="quote">
-    STAY RICH.
+  Welcome my friend.
 </div>
-
-</body>
-</html>
 
 </body>
 </html>
